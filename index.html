@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niti Patel - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="desktop">
+
+  <!-- ===== MENU BAR ===== -->
+  <div id="menu-bar">
+    <div class="left">
+      <img class="apple-logo" src="./images/apple-logo.jpg" alt="" style="height:18px; width:auto;">
+      <span class="finder-bold">Finder</span>
+      <span>File</span>
+      <span>Edit</span>
+      <span>View</span>
+      <span>Go</span>
+      <span>Window</span>
+      <span>Help</span>
+    </div>
+    <div class="right">
+      <svg class="menubar-icon" width="18" height="11" viewBox="0 0 18 11" fill="currentColor" opacity="0.75"><rect x="0.5" y="1.5" width="14" height="8" rx="1.5" stroke="currentColor" stroke-width="1" fill="none"/><rect x="2" y="3" width="9" height="5" rx="0.5"/><path d="M15 4h1.5c.3 0 .5.2.5.5v2c0 .3-.2.5-.5.5H15z"/></svg>
+      <svg class="menubar-icon" width="13" height="11" viewBox="0 0 16 12" fill="currentColor" opacity="0.75"><path d="M8 11.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/><path d="M4.5 8.1a.75.75 0 0 1-.5-1.3 5.5 5.5 0 0 1 8 0 .75.75 0 1 1-1.1 1A4 4 0 0 0 5 7.8a.75.75 0 0 1-.5.3z"/><path d="M1.8 5.4a.75.75 0 0 1-.5-1.3 9 9 0 0 1 13.4 0 .75.75 0 1 1-1.1 1 7.5 7.5 0 0 0-11.2 0 .75.75 0 0 1-.6.3z"/></svg>
+      <svg class="menubar-icon" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.75"><circle cx="5.8" cy="5.8" r="4.5"/><line x1="9.2" y1="9.2" x2="12.5" y2="12.5" stroke-linecap="round"/></svg>
+      <span id="clock"></span>
+    </div>
+  </div>
+
+  <!-- ===== DESKTOP ICONS ===== -->
+  <div id="desktop-icons">
+    <a class="desktop-icon icon-square" href="https://square-season-schema.vercel.app/" target="_blank" rel="noopener">
+      <img class="icon-img" src="./images/icon-square.png" alt="">
+      <span class="icon-label">Square Prototype</span>
+    </a>
+    <a class="desktop-icon icon-draftkings" href="https://docs.google.com/presentation/d/1lQB7QDJ4giEvgaY2q5fsCJbT1xLm3THehxsL__GYLMY/edit?slide=id.g11c0ef81646_0_99#slide=id.g11c0ef81646_0_99" target="_blank" rel="noopener" title="Password protected">
+      <img class="icon-img" src="./images/icon-draftkings.png" alt="">
+      <span class="icon-label">DraftKings GTM</span>
+    </a>
+    <a class="desktop-icon icon-essay" href="https://substack.com/home/post/p-186259896" target="_blank" rel="noopener">
+      <img class="icon-img" src="./images/icon-essay.png" alt="">
+      <span class="icon-label">A Dream for Humanity</span>
+    </a>
+    <a class="desktop-icon icon-video" href="https://drive.google.com/file/d/1JY4AUD06EbOQuHBK-UeAh7yYRZd-ns-g/view?usp=sharing" target="_blank" rel="noopener">
+      <img class="icon-img" src="./images/icon-video.png" alt="">
+      <span class="icon-label">DK Sizzle Reel</span>
+    </a>
+  </div>
+
+  <!-- ===== DOCK ===== -->
+  <div id="dock">
+    <div class="dock-icon" data-tooltip="Skills" onclick="openOverlay('notes', 'skills')"><img src="./images/dock-settings.png" alt="Skills"></div>
+    <div class="dock-icon" data-tooltip="About Me" onclick="openOverlay('notes', 'about')"><img src="./images/dock-notes.png" alt="About Me"></div>
+    <div class="dock-icon" data-tooltip="Photos" onclick="openOverlay('photos')"><img src="./images/dock-photos.png" alt="Photos"></div>
+    <div class="dock-icon" data-tooltip="Spotify" onclick="openOverlay('spotify')"><img src="./images/dock-spotify.png" alt="Spotify"></div>
+    <a class="dock-icon" data-tooltip="Mail" href="mailto:niti.patel.m@gmail.com"><img src="./images/dock-mail.png" alt="Mail"></a>
+    <a class="dock-icon" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/niti-patel-951286140/" target="_blank" rel="noopener"><img src="./images/dock-linkedin.png" alt="LinkedIn"></a>
+  </div>
+
+</div>
+
+<!-- ===== NOTES OVERLAY ===== -->
+<div class="overlay-backdrop" id="notes-overlay" onclick="closeOnBackdrop(event, 'notes')">
+  <div class="overlay-window">
+    <div class="overlay-title-bar">
+      <div class="traffic-lights">
+        <div class="traffic-light tl-red" onclick="closeOverlay('notes')"></div>
+        <div class="traffic-light tl-yellow"></div>
+        <div class="traffic-light tl-green"></div>
+      </div>
+      <span class="overlay-title-text">Notes</span>
+    </div>
+    <div class="overlay-body">
+      <div class="notes-sidebar">
+        <div class="notes-tab active" data-tab="about" onclick="switchTab('about')">About Me</div>
+        <div class="notes-tab" data-tab="skills" onclick="switchTab('skills')">Skills</div>
+      </div>
+      <div class="notes-content">
+        <div class="tab-panel active" id="tab-about">
+          <h3>Niti Patel</h3>
+          <div class="notes-email"><a href="mailto:niti.patel.m@gmail.com" class="email-link">niti.patel.m@gmail.com</a></div>
+          <div class="location">Chicago, IL (Open to Relocation)</div>
+          <div class="notes-status">⚡ Status: Armed & Dangerous</div>
+          <div class="notes-status">🕐 Time: AI Renaissance</div>
+          <div style="height: 14px;"></div>
+
+          <p><strong>Product marketer. Builder. Storyteller. Tastemaker.</strong> Occasionally dangerous with a prototype.</p>
+
+          <p>I spent five years making complex products feel obvious. First at a B2B marketplace where I helped scale from zero to $350K MRR, then at DraftKings where I led product marketing across multiple products, including Reignmakers which became the #1 NFT project in sports during my tenure.</p>
+
+          <p>Now I'm deep in the AI Renaissance.</p>
+
+          <p>Built a planning engine for Square sellers, from concept to deployment, the whole thing. This portfolio too. I can't stop making things!</p>
+
+          <div class="notes-checklist-label">Experience:</div>
+          <div class="notes-checklist">
+            <div class="checklist-item"><span class="check-circle"></span> Boston University (B.S.) - Dean's List, Full Academic Scholarship</div>
+            <div class="checklist-item"><span class="check-circle"></span> Resume available upon request</div>
+            <div class="checklist-item"><span class="check-circle"></span> <a href="https://www.linkedin.com/in/niti-patel-951286140/" class="email-link" target="_blank" rel="noopener">LinkedIn →</a></div>
+          </div>
+
+          <p class="notes-closing">If you've scrolled this far, we'd probably get along. Say hi :)</p>
+        </div>
+        <div class="tab-panel" id="tab-skills">
+          <div class="skill-category">
+            <h4>AI</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Claude</span>
+              <span class="skill-tag">ChatGPT</span>
+              <span class="skill-tag">Cursor</span>
+              <span class="skill-tag">Framer</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">Prototyping</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Product & GTM</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Product Marketing</span>
+              <span class="skill-tag">Product Strategy</span>
+              <span class="skill-tag">Product Roadmapping</span>
+              <span class="skill-tag">Go-to-Market Planning</span>
+              <span class="skill-tag">Market Expansion</span>
+              <span class="skill-tag">Competitive Analysis</span>
+              <span class="skill-tag">Agile Project Management</span>
+              <span class="skill-tag">Product Release Comms</span>
+              <span class="skill-tag">Cross-Functional Leadership</span>
+              <span class="skill-tag">Brand Storytelling</span>
+              <span class="skill-tag">Creative Direction</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Analytics & Tools</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Google Analytics</span>
+              <span class="skill-tag">Excel</span>
+              <span class="skill-tag">PowerPoint</span>
+              <span class="skill-tag">Salesforce</span>
+              <span class="skill-tag">HubSpot</span>
+              <span class="skill-tag">Notion</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Design & Content</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Sketch</span>
+              <span class="skill-tag">Copywriting</span>
+              <span class="skill-tag">Adobe Creative Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PHOTOS OVERLAY ===== -->
+<div class="overlay-backdrop" id="photos-overlay" onclick="closeOnBackdrop(event, 'photos')">
+  <div class="overlay-window">
+    <div class="overlay-title-bar">
+      <div class="traffic-lights">
+        <div class="traffic-light tl-red" onclick="closeOverlay('photos')"></div>
+        <div class="traffic-light tl-yellow"></div>
+        <div class="traffic-light tl-green"></div>
+      </div>
+      <span class="overlay-title-text">Photos</span>
+    </div>
+    <div class="photos-header">
+      <img class="photos-icon-img" src="./images/dock-photos.png" alt="Photos">
+      <div class="photos-header-text">
+        <span class="photos-title">Gallery</span>
+        <span class="photos-subtitle">~away from screen~</span>
+      </div>
+    </div>
+    <div class="photos-grid-label">▾ Preview</div>
+    <div class="photos-grid">
+      <div class="photo-row">
+        <div class="photo-item"><img src="./images/photo-kyoto.jpg" alt="Kyoto"><div class="photo-caption">📍 Kyoto</div></div>
+        <div class="photo-item"><img src="./images/photo-tsukiji.jpg" alt="Tsukiji Market"><div class="photo-caption">📍 Tsukiji Market</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="photo-item"><img src="./images/photo-cat.jpg" alt="Cat"><div class="photo-caption">📍 Elite Chicago Skyline</div></div>
+        <div class="photo-item"><img src="./images/photo-tokyo.jpg" alt="Tokyo"><div class="photo-caption">📍 Tokyo Tower</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="photo-item"><img src="./images/photo-austin.jpg" alt="Austin F1"><div class="photo-caption">📍 F1 Track, Austin</div></div>
+        <div class="photo-item"><img src="./images/photo-brunch.jpg" alt="SF Brunch"><div class="photo-caption">☕ SF Brunch</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="photo-item"><img src="./images/photo-puertorico.jpg" alt="Puerto Rico"><div class="photo-caption">📍 Flamenco Beach, Puerto Rico</div></div>
+        <div class="photo-item"><img src="./images/photo-chicago.jpg" alt="Chicago"><div class="photo-caption">🐱</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SPOTIFY OVERLAY ===== -->
+<div class="overlay-backdrop" id="spotify-overlay" onclick="closeOnBackdrop(event, 'spotify')">
+  <div class="overlay-window">
+    <div class="overlay-title-bar">
+      <div class="traffic-lights">
+        <div class="traffic-light tl-red" onclick="closeOverlay('spotify')"></div>
+        <div class="traffic-light tl-yellow"></div>
+        <div class="traffic-light tl-green"></div>
+      </div>
+      <span class="overlay-title-text">Spotify ~currently playing~</span>
+    </div>
+    <div class="spotify-body">
+      <iframe
+        id="spotify-embed"
+        src=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        style="height:152px;"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NOTIFICATION BANNER ===== -->
+<a id="notification" href="mailto:niti.patel.m@gmail.com" style="text-decoration:none;">
+  <img class="notif-icon" src="./images/headshot-icon.png" alt="Niti">
+  <div class="notif-content">
+    <div class="notif-app"><span class="notif-emoji">🚀</span> Notification</div>
+    <div class="notif-text">Niti is open to work. She vibe coded this site and is probably building something else right now.</div>
+  </div>
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
